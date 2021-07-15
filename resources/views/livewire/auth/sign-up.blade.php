@@ -1,7 +1,8 @@
 <div>
     <div>
-
-        <form wire:submit.prevent="submit">
+        @toastr_js
+        @toastr_render
+        <form wire:submit.prevent="submit" wire:loading.remove>
             <div class="text-center">
                 <h3>فرم ثبت نام عوامل اجرایی آزمون </h3>
             </div>
@@ -230,7 +231,7 @@
         </form>
         <div wire:loading>
             <div class="text-center" dir="rtl">
-                <h3>در حال ثبت نام لطفا اندکی تامل کنید...</h3>
+               <img src="{{asset('loading.gif')}}">
             </div>
         </div>
     </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>ثبت نام عوامل اجرایی  آزمون</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{asset('assets/favicon.ico')}}" />
     <!-- Bootstrap icons-->
@@ -16,6 +16,7 @@
     <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v29.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
     <link href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css" rel="stylesheet">
+    @toastr_css
 
     <style>
         *{
@@ -41,7 +42,7 @@
                     <!-- Page heading-->
                     <h1 class="mb-5">ثبت نام عوامل اجرایی  آزمون های دانشگاه بیرجند </h1>
 
-                    <div class="col-auto "><a class="btn btn-info btn-lg m-2 "  href="{{route('signup')}}" >ثبت نام </a><a class="btn btn-primary btn-lg m-2"  >ورود</a></div>
+                    <div class="col-auto "><a class="btn btn-info btn-lg m-2 "  href="{{route('signup')}}" >ثبت نام </a><a class="btn btn-primary btn-lg m-2" href="{{route('signin')}}">ورود</a></div>
 
                 </div>
             </div>
@@ -82,6 +83,7 @@
 <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
 <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
 @livewireScripts
+
 @yield('script')
 </body>
 </html>

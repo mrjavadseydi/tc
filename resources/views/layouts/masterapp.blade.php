@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>ثبت نام عوامل اجرایی  آزمون</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{asset('assets/favicon.ico')}}" />
     <!-- Bootstrap icons-->
@@ -15,12 +15,14 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v29.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+    @toastr_css
 
     <style>
         *{
             font-family: Vazir;
         }
     </style>
+
 </head>
 <body>
 <!-- Masthead-->
@@ -32,7 +34,7 @@
                     <!-- Page heading-->
                     <h1 class="mb-5">ثبت نام عوامل اجرایی  آزمون های دانشگاه بیرجند </h1>
 
-                    <div class="col-auto "><a class="btn btn-info btn-lg m-2 "  href="{{route('signup')}}"  >ثبت نام </a><a class="btn btn-primary btn-lg m-2"  >ورود</a></div>
+                    <div class="col-auto "><a class="btn btn-info btn-lg m-2 "  href="{{route('signup')}}"  >ثبت نام </a><a class="btn btn-primary btn-lg m-2" href="{{route('signin')}}"  >ورود</a></div>
 
                 </div>
             </div>
@@ -94,8 +96,12 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <script src="{{asset('js/scripts.js')}}"></script>
 
+@toastr_js
+@toastr_render
 {{--<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>--}}
 </body>
 </html>

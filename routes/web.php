@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','welcome');
 Route::get('sign-up',\App\Http\Livewire\Auth\SignUp::class)->name('signup');
+Route::get('sign-in',\App\Http\Livewire\Auth\SignIn::class)->name('signin');

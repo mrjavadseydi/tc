@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Auth;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -84,9 +85,9 @@ class SignUp extends Component
             'degree_photo'=>$degree_photo
 
         ]);
-        Auth::loginUsingId($user->id);
-        toastr()->success('ثبت نام با موفقیت انجام شد ');
-        $this->redirect(url('/'));
+        session()->flash('message', ['type'=>'success','message'=>'ثبت نام موفقیت آمیز بود میتوانید وارد حساب خود شوید!']);
+
+        $this->redirect(route('signin'));
 
     }
     public function render()
