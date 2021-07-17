@@ -23,6 +23,7 @@ class SignIn extends Component
             if(Hash::check($this->password,$user->password)){
                 \Auth::loginUsingId($user->id);
                 session()->flash('message', ['type'=>'success','message'=>'ورود موفقیت آمیز']);
+                 $this->redirect(route('panel'));
             }else{
                 session()->flash('message', ['type'=>'danger','message'=>'ورود نا موفق کلمه عبور را بررسی کنید']);
 

@@ -1,4 +1,6 @@
-<script src="{{asset('asset/js/jquery-3.3.1.min.js')}}"></script>
+@livewireScripts
+
+
 <!-- Plugins js -->
 <script src="{{asset('asset/js/plugins.js')}}"></script>
 <!-- Popper js -->
@@ -16,8 +18,6 @@
 
 <script src="{{asset('asset/js/main.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.3/sweetalert2.min.js" integrity="sha512-vU//bDmQBZyvfOmsBHrOUc9+iMs32JjycRIyZQMOPQ9kDF9+NhnDAMTVsH/vDoRmqbfB/EO2YYj73MZ3C17yBw==" crossorigin="anonymous"></script>
-@toastr_js
-@toastr_render
 <script>
 @if ($errors->any())
 

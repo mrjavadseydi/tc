@@ -31,3 +31,7 @@
 }
 </style>
 @toastr_css
+<script src="{{asset('asset/js/jquery-3.3.1.min.js')}}"></script>
+@toastr_js
+@toastr_render
+@livewireStyles

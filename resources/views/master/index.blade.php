@@ -18,6 +18,18 @@
             color: black;
             padding: 11px;
         }
+            .select {
+                line-height: 50px;
+                padding-right: 25px;
+                padding-left: 20px;
+                font-size: 15px;
+                background-color: #f0f1f3;
+                border-color: #f0f1f3;
+                height: 50px;
+                min-width: 300px;
+                border-radius: 4px;
+            }
+
     </style>
 </head>
 
@@ -30,7 +42,7 @@
         <div class="navbar navbar-expand-md header-menu-one bg-light">
             <div class="nav-bar-header-one">
                 <div class="header-logo">
-                    <a href="index.html">
+                    <a >
 {{--                        <img src="img/logo.png" alt="logo">--}}
                         {{auth()->user()->name}}
                     </a>
@@ -59,7 +71,7 @@
                     <li class="navbar-item header-search-bar">
                         <div class="input-group stylish-input-group">
                             <span class="input-group-addon">
-                                <a href="{{ route('account.logout') }}" class="a-head">
+                                <a href="{{ route('logout') }}" class="a-head">
                                     خروج
                                 </a>
                             </span>
@@ -80,7 +92,8 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <br>
-                @yield('content')
+
+               {{ $slot }}
                 <!-- Social Media End Here -->
                 <!-- Footer Area Start Here -->
                 <footer class="footer-wrap-layout1">
