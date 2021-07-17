@@ -2,7 +2,7 @@
   <div>
 
 
-    @if (session()->has('message'))
+      @if (session()->has('message'))
 
           <div class="alert alert-{{session('message')['type']}}">
               {{session('message')['message'] }}

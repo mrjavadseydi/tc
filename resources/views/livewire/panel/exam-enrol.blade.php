@@ -28,7 +28,12 @@
 
                             <input class="btn-fill-md text-light bg-dark-pastel-green" type="submit" value="ثبت!">
 
+                            @error('user_role')
+                            <spna style="color: red">
+                                {{$message}}
+                            </spna>
 
+                            @enderror
                         </form>
                     </div>
                 </div>

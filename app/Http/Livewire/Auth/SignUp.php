@@ -66,7 +66,7 @@ class SignUp extends Component
             $degree_photo = null;
         }
         $this->birth = $this->year."/".$this->month."/".$this->day;
-        $user = User::create([
+        User::create([
             'name'=>$this->name,
             'email'=>$this->email,
             'password'=>bcrypt($this->password),

@@ -10,12 +10,24 @@ class ExamEnrol extends Component
     public $exam ;
     public $roles;
     public $user_role;
+    protected $rules = [
+        'user_role'=>'required|numeric'
+    ];
+    protected $messages = [
+        'user_role.required'=>"یک نقش را انتخاب کنید ",
+        'user_role.numeric'=>"ورودی غلط"
+    ];
+
     public function mount($exam,$roles){
             $this->exam = $exam;
             $this->roles = $roles;
     }
-
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
     public function enrol(){
+        $this->validate();
         Enrol::create([
             'user_id'=>\Auth::id(),
             'role_id'=>$this->user_role,

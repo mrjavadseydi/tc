@@ -11,6 +11,10 @@
                 <a href="{{ route('panel') }}"
                    class="nav-link"><span>میزکار</span></a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('myenrol') }}"
+                   class="nav-link"><span>ثبت نام های من</span></a>
+            </li>
         </ul>
     </div>
 </div>
