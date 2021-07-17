@@ -15,6 +15,13 @@
                 <a href="{{ route('myenrol') }}"
                    class="nav-link"><span>ثبت نام های من</span></a>
             </li>
+            @can('admin')
+
+                <li class="nav-item">
+                    <a href="{{ route('roles') }}"
+                       class="nav-link"><span>مدیریت نقش های آزمون</span></a>
+                </li>
+            @endcan
         </ul>
     </div>
 </div>
