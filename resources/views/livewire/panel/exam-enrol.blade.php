@@ -10,7 +10,7 @@
                 <div class="text-right">
                     <div class="item-content">
                         <p>
-                            {{$exam->description}}
+                            {!! $exam->description !!}
                         </p>
                         <form wire:submit.prevent="enrol">
 

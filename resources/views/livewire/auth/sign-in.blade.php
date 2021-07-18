@@ -11,15 +11,18 @@
                         {{session('message')['message'] }}
                     </div>
                 @endif
+                    <div class="alert alert-info">
+                        کلمه عبور به طور پیش فرض کد ملی می باشد
+                    </div>
                 <h3>فرم ورود عوامل اجرایی آزمون </h3>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="p-2">
-                        <lable class="text-right">ایمیل</lable>
+                        <lable class="text-right">کدملی</lable>
                     </div>
-                    <input class="form-control  @error('username') is-invalid @enderror" placeholder="example@e-mail.com"
-                           wire:model.debounce.700ms="username" type="email">
+                    <input class="form-control  @error('username') is-invalid @enderror" placeholder="06407322222"
+                           wire:model.debounce.700ms="username" type="text">
                     @error('username')
                     <div class="invalid-feedback ">{{ $message }}</div>
                     @enderror
@@ -46,7 +49,7 @@
                 <div class="p-2">
                     <lable></lable>
                 </div>
-                <input class="form-control btn btn-success " type="submit" value="ورود">
+                <input id="sub" class="form-control btn btn-success " type="submit" value="ورود">
 
         </form>
 

@@ -12,18 +12,18 @@ class SignUp extends Component
     use WithFileUploads;
     public $name;
     public $national_id;
-    public $email;
+//    public $email;
     public $mobile;
     public $whatsapp;
     public $bank;
     public $birth;
     public $service;
     public $degree;
-    public $student_step;
+//    public $student_step;
     public $gradu_step;
-    public $password;
+//    public $password;
     public $repassword;
-    public $sex=1;
+    public $sex;
     public $degree_photo;
     public $profile;
     public $national_id_photo;
@@ -32,21 +32,21 @@ class SignUp extends Component
     public $day;
     protected $rules = [
         'name'=>'required|min:3',
-        'service'=>'nullable|min:3',
+        'service'=>'nullable|min:3|not_in:1',
         'national_id'=>'required|min:10',
-        'email'=>'required|unique:users,email|email',
+//        'email'=>'required|unique:users,email|email',
         'mobile'=>'required|starts_with:09|min:11',
-        'whatsapp'=>'required|starts_with:09|min:11',
+        'whatsapp'=>'nullable|starts_with:09|min:11',
         'bank'=>'required',
-        'password'=>'required',
-        'repassword'=>'required|same:password',
+//        'password'=>'required',
+//        'repassword'=>'required|same:password',
         'sex'=>'required|in:1,2',
         'degree'=>'required',
         "degree_photo"=>'nullable|image|max:2048',
         'profile'=>"required|image|max:2048",
         'national_id_photo'=>"required|image|max:2048",
-        'gradu_step'=>'required_without:student_step',
-        'student_step'=>'required_without:gradu_step',
+        'gradu_step'=>'required|min:3',
+//        'student_step'=>'required_without:gradu_step',
         'year'=>'required|numeric',
         'day'=>'required|numeric',
         'month'=>'required|numeric'
@@ -65,11 +65,12 @@ class SignUp extends Component
         }else{
             $degree_photo = null;
         }
+        $email = $this->national_id."@birjand.ac.ir";
         $this->birth = $this->year."/".$this->month."/".$this->day;
         User::create([
             'name'=>$this->name,
-            'email'=>$this->email,
-            'password'=>bcrypt($this->password),
+            'email'=>$email,
+            'password'=>bcrypt($this->national_id),
             'mobile'=>$this->mobile,
             'national_id'=>$this->national_id,
             'national_id_photo'=>$this->national_id_photo->store('public/uploads'),
@@ -80,7 +81,7 @@ class SignUp extends Component
             'sex'=>$this->sex,
             'bank'=>$this->bank,
             'graduated_step'=>$this->gradu_step,
-            'student_step'=>$this->student_step,
+            'student_step'=>null,
             'service_location'=>$this->service,
             'degree_photo'=>$degree_photo
 

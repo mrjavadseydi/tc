@@ -21,6 +21,16 @@
                     <a href="{{ route('roles') }}"
                        class="nav-link"><span>مدیریت نقش های آزمون</span></a>
                 </li>
+
+
+                <li class="nav-item">
+                    <a href="{{ route('index.exam') }}"
+                       class="nav-link"><span>مدیریت آزمون ها </span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('create.exam') }}"
+                       class="nav-link"><span>ساخت آزمون</span></a>
+                </li>
             @endcan
         </ul>
     </div>

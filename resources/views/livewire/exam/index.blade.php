@@ -17,28 +17,9 @@
         <div class="card-body">
             <div class="heading-layout1">
                 <div class="item-title">
-                    <h3>نقش ها</h3>
+                    <h3>آزمون ها</h3>
                 </div>
             </div>
-            <form wire:submit.prevent="newRole">
-                <div class="row">
-                    <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
-                        <input type="text" placeholder="نام نقش جدید" wire:model.lazy="role_name"
-                               class="form-control">
-                    </div>
-                    <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
-                        <button type="submit" class="fw-btn-fill btn-gradient-yellow">ثبت</button>
-                    </div>
-                </div>
-
-                @error('role-name')
-                <span style="color: red">
-                    نقش را تکمیل کنید!
-                </span>
-
-                @enderror
-            </form>
-
             <div class="table-responsive">
                 <table class="table table-hover  text-nowrap">
                     <thead>
@@ -47,7 +28,10 @@
                             شناسه
                         </th>
                         <th>
-                            نام نقش
+                            نام آزمون
+                        </th>
+                        <th>
+                            وضعیت
                         </th>
                         <th>
 
@@ -55,19 +39,34 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($roles as  $role)
+                    @foreach($exams as  $exam)
                         <tr>
-                            <td>{{$role->id}}</td>
-                            <td>{{$role->title}}</td>
+                            <td>{{$exam->id}}</td>
+                            <td>{{$exam->title}}</td>
                             <td>
-                                <livewire:admin.remove-users-role :roleid="$role->id" :key="$role->id"></livewire:admin.remove-users-role>
+                                @if($exam->active==0)
+                                    غیرفعال
+                                @else
+                                    تایید شده
+                                @endif
+
+                            </td>
+                            <td >
+                                <div class="row">
+                                    <livewire:exam.delete :key="$exam->id" :examid="$exam->id"></livewire:exam.delete>
+                                    <a href="{{route('edit.exam',$exam->id)}}" class="btn btn-primary m-1">
+                                        ویرایش
+                                    </a>
+                                </div>
+
                             </td>
                         </tr>
+
                     @endforeach
                     </tbody>
                 </table>
             </div>
-            {{$roles->links()}}
+            {{$exams->links()}}
         </div>
     </div>
 

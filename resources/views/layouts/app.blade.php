@@ -42,7 +42,7 @@
                     <!-- Page heading-->
                     <h1 class="mb-5">ثبت نام عوامل اجرایی  آزمون های دانشگاه بیرجند </h1>
 
-                    <div class="col-auto "><a class="btn btn-info btn-lg m-2 "  href="{{route('signup')}}" >ثبت نام </a><a class="btn btn-primary btn-lg m-2" href="{{route('signin')}}">ورود</a></div>
+                    <div class="col-auto "><a class="btn btn-info btn-lg m-2 "  href="{{route('signup')}}/#sub" >ثبت نام </a><a class="btn btn-primary btn-lg m-2" href="{{route('signin')}}/#sub">ورود</a></div>
 
                 </div>
             </div>

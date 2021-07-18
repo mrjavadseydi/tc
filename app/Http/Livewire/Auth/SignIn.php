@@ -12,21 +12,18 @@ class SignIn extends Component
     public $username;
     public $password;
     protected $rules = [
-        'username'=>'required|email',
+        'username'=>'required|min:10',
         'password'=>'required',
-
-
     ];
     public function login(){
         $this->validate();
-        if($user = User::where('email',$this->username)->first()){
+        if($user = User::where('national_id',$this->username)->first()){
             if(Hash::check($this->password,$user->password)){
                 \Auth::loginUsingId($user->id);
                 session()->flash('message', ['type'=>'success','message'=>'ورود موفقیت آمیز']);
                  $this->redirect(route('panel'));
             }else{
                 session()->flash('message', ['type'=>'danger','message'=>'ورود نا موفق کلمه عبور را بررسی کنید']);
-
             }
         }else{
             session()->flash('message', ['type'=>'danger','message'=>'کاربری یافت نشد ']);
