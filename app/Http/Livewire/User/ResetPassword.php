@@ -20,27 +20,29 @@ class ResetPassword extends Component
     ];
     public function resetPass()
     {
+        $this->dispatchBrowserEvent('toast', ['type' => 'success', 'msg' => 'ثبت نام موفقیت آمیز بود میتوانید وارد حساب خود شوید!']);
+
 //        toastr()->success('sdjkfhksdjfkf');
-        $this->validate();
-        $response = \Http::post('https://www.google.com/recaptcha/api/siteverify?secret=' . env('GOOGLE_SECRET_KEY') . '&response=' . $this->captcha);
-        $this->captcha = $response->json();
-
-        if($this->captcha['success']){
-            $user = User::where('mobile',$this->mobile)->first();
-            if ($user){
-                $pass = rand(1000000,9999999999);
-                $user->update([
-                    'password'=>bcrypt($pass)
-                ]);
-                $this->sms($pass,$user->mobile);
-            }
-            session()->flash('message', ['type'=>'success','message'=>'کلمه عبور برای شما پیامک شد !']);
-
-        }else{
-            session()->flash('message', ['type'=>'danger','message'=>'کپچا را تکمیل کنید']);
-
-        }
-        $this->emit('resetCap');
+//        $this->validate();
+//        $response = \Http::post('https://www.google.com/recaptcha/api/siteverify?secret=' . env('GOOGLE_SECRET_KEY') . '&response=' . $this->captcha);
+//        $this->captcha = $response->json();
+//
+//        if($this->captcha['success']){
+//            $user = User::where('mobile',$this->mobile)->first();
+//            if ($user){
+//                $pass = rand(1000000,9999999999);
+//                $user->update([
+//                    'password'=>bcrypt($pass)
+//                ]);
+//                $this->sms($pass,$user->mobile);
+//            }
+//            session()->flash('message', ['type'=>'success','message'=>'کلمه عبور برای شما پیامک شد !']);
+//
+//        }else{
+//            session()->flash('message', ['type'=>'danger','message'=>'کپچا را تکمیل کنید']);
+//
+//        }
+//        $this->emit('resetCap');
 
     }
     public function sms( $password1, $phone)

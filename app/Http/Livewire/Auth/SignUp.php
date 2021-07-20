@@ -86,6 +86,8 @@ class SignUp extends Component
             'degree_photo'=>$degree_photo
 
         ]);
+
+//        $this->dispatchBrowserEvent('toast', ['type' => 'success', 'msg' => 'ثبت نام موفقیت آمیز بود میتوانید وارد حساب خود شوید!']);
         session()->flash('message', ['type'=>'success','message'=>'ثبت نام موفقیت آمیز بود میتوانید وارد حساب خود شوید!']);
 
         $this->redirect(route('signin'));
