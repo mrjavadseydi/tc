@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','welcome')->name('wellcome');
 Route::get('sign-up',\App\Http\Livewire\Auth\SignUp::class)->name('signup');
 Route::get('sign-in',\App\Http\Livewire\Auth\SignIn::class)->name('signin');
+Route::get('reset',\App\Http\Livewire\User\ResetPassword::class)->name('reset');
 Route::get('logout',function (){
     session()->flush();
     return redirect(\route('wellcome'));

@@ -128,7 +128,7 @@
                         <div class="col-4">
                             <select wire:model.debounce.700ms="month" class="col-4 w-100 d-inline customselect">
                                 <option>ماه</option>
-                                @for($i=12;$i>1;$i--)
+                                @for($i=12;$i>0;$i--)
                                     <option>{{$i}}</option>
                                 @endfor
 
@@ -140,7 +140,7 @@
                             <select wire:model.debounce.700ms="day" class="col-4 w-100 d-inline customselect">
                                 <option>روز</option>
 
-                                @for($i=31;$i>1;$i--)
+                                @for($i=31;$i>0;$i--)
                                     <option>{{$i}}</option>
                                 @endfor
                             </select>

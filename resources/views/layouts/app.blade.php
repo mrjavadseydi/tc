@@ -83,7 +83,8 @@
 <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
 <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
 @livewireScripts
-
+@toastr_js
+@toastr_render
 @yield('script')
 </body>
 </html>

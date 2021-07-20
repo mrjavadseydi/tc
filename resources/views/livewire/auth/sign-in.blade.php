@@ -2,8 +2,7 @@
     <div class="text-center">
 
         <form wire:submit.prevent="login" wire:loading.remove class="offset-2 col-8">
-            @toastr_js
-            @toastr_render
+
             <div class="text-center">
                 @if (session()->has('message'))
 
@@ -52,8 +51,14 @@
                 <input id="sub" class="form-control btn btn-success " type="submit" value="ورود">
 
         </form>
+        <br>
+        <div class="text-center">
+            <a href="{{route('reset')}}">
+                بازیابی کلمه عبور
+            </a>
 
-        <div wire:loading>
+        </div>
+            <div wire:loading>
             <div class="text-center" dir="rtl">
                 <img src="{{asset('loading.gif')}}">
             </div>
