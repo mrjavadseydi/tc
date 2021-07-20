@@ -14,21 +14,27 @@
                         </p>
                         <form wire:submit.prevent="enrol">
 
-                            <label>
-                                نقش پیشنهادی:
+{{--                            <label>--}}
+{{--                                نقش پیشنهادی:--}}
+{{--                            </label>--}}
+{{--                            <select class="select" wire:model="user_role">--}}
+{{--                                <option>انتخاب کنید</option>--}}
+{{--                                @foreach($roles as $role)--}}
+{{--                                    <option value="{{$role->id}}">--}}
+{{--                                        {{$role->title}}--}}
+{{--                                    </option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+                            <input type="checkbox" wire:model.debounce.10000ms="agree" id="check" value="active">
+                            <label for="check">
+                                اینجانب
+                                <h6 style="color: red;display: inline">
+                                    {{auth()->user()->name}}
+                                </h6>داوطلب همکاری با مرکز آزمون های دانشگاه بیرجند در  تمامی روزهای برگزاری آزمون  می باشم
                             </label>
-                            <select class="select" wire:model="user_role">
-                                <option>انتخاب کنید</option>
-                                @foreach($roles as $role)
-                                    <option value="{{$role->id}}">
-                                        {{$role->title}}
-                                    </option>
-                                @endforeach
-                            </select>
+                            <input class="btn-fill-md text-light bg-dark-pastel-green" type="submit" value="ثبت">
 
-                            <input class="btn-fill-md text-light bg-dark-pastel-green" type="submit" value="ثبت!">
-
-                            @error('user_role')
+                            @error('agree')
                             <spna style="color: red">
                                 {{$message}}
                             </spna>

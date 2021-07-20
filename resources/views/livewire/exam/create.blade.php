@@ -1,7 +1,7 @@
 <div>
 
     <div>
-        <div class="card message-box-wrap height-auto" >
+        <div class="card message-box-wrap height-auto">
             <div class="card-body">
                 <div class="heading-layout1">
                     <div class="item-title">
@@ -34,24 +34,24 @@
                                     فعال
                                 </option>
                                 <option value="0">
-                                  غیرفعال
+                                    غیرفعال
                                 </option>
 
                             </select>
 
                             @error('active')
-                            <span style="color: red">
-                            {{$message}}
-                    </span>
+                                <span style="color: red">
+                                    {{$message}}
+                                </span>
                             @enderror
                         </div>
                     </div>
 
-                    <div class="col-12"  wire:ignore>
+                    <div class="col-12" wire:ignore>
                         <label>توضیحات آزمون*</label>
                         <br>
 
-                        <textarea name="alerts" dir="rtl" class="cke_rtl w-100" ></textarea>
+                        <textarea name="alerts" dir="rtl" class="cke_rtl w-100"></textarea>
                     </div>
 
                     <input class="btn-fill-md text-light bg-dark-pastel-green" type="submit" value="ثبت!">

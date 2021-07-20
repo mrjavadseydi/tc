@@ -9,12 +9,14 @@ class ExamEnrol extends Component
 {
     public $exam ;
     public $roles;
-    public $user_role;
+    public $agree;
+    public $user_role=43;
     protected $rules = [
-        'user_role'=>'required|numeric'
+        'user_role'=>'required|numeric',
+        'agree'=>'required|in:active'
     ];
     protected $messages = [
-        'user_role.required'=>"یک نقش را انتخاب کنید ",
+        'agree.*'=>"موافقت با شرایط الزامی است ",
         'user_role.numeric'=>"ورودی غلط"
     ];
 
