@@ -33,7 +33,7 @@ class SignUp extends Component
     protected $rules = [
         'name'=>'required|min:3',
         'service'=>'nullable|min:3|not_in:1',
-        'national_id'=>'required|min:10',
+        'national_id'=>'required|min:10|numeric',
 //        'email'=>'required|unique:users,email|email',
         'mobile'=>'required|starts_with:09|min:11',
         'whatsapp'=>'nullable|starts_with:09|min:11',
@@ -53,10 +53,10 @@ class SignUp extends Component
 
     ];
 
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
+//    public function updated($propertyName)
+//    {
+//        $this->validateOnly($propertyName);
+//    }
     public function submit(){
 
         $this->validate();
