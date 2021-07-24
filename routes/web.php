@@ -19,5 +19,6 @@ Route::get('sign-in',\App\Http\Livewire\Auth\SignIn::class)->name('signin');
 Route::get('reset',\App\Http\Livewire\User\ResetPassword::class)->name('reset');
 Route::get('logout',function (){
     session()->flush();
+//    auth()->loginUsingId(1);
     return redirect(\route('wellcome'));
 })->name('logout');

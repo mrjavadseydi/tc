@@ -15,4 +15,8 @@ class Enrol extends Model
     public function role(){
         return $this->belongsTo(ExamRole::class,'role_id');
     }
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+
+    }
 }

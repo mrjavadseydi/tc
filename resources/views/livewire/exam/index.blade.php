@@ -57,7 +57,11 @@
                                     <a href="{{route('edit.exam',$exam->id)}}" class="btn btn-primary m-1">
                                         ویرایش
                                     </a>
+                                    <a href="{{route('report.exam',$exam->id)}}" class="btn btn-info m-1">
+                                        آمار آزمون
+                                    </a>
                                 </div>
+
 
                             </td>
                         </tr>
