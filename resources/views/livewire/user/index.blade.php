@@ -34,7 +34,7 @@
                             کدملی
                         </th>
                         <th>
-                            نام کاربر
+                           شماره تلفن
                         </th>
                         <th>
 
@@ -42,20 +42,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($enrols as  $enrol)
+                    @foreach($users as  $user)
                         <tr>
-                            <td>{{$enrol->id}}</td>
-                            <td>{{$enrol->exam->title}}</td>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
                             <td>
-                                @if($enrol->accept==0)
-                                    غیرفعال
-                                @else
-                                    تایید شده
-                                @endif
-
+                                {{$user->national_id}}
                             </td>
                             <td>
-                                {{$enrol->user->name}}
+                                {{$user->mobile}}
                             </td>
                             <td >
                                 <div class="row">
@@ -70,7 +65,8 @@
                     </tbody>
                 </table>
             </div>
-            {{$enrols->links()}}
+{{--            @dd($users->links())--}}
+            {{$users->links()}}
         </div>
     </div>
 
