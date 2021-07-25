@@ -20,57 +20,8 @@
                     <h3>داوطلبان همکاری</h3>
                 </div>
             </div>
-            <div class="table-responsive">
-                <table class="table table-hover  text-nowrap">
-                    <thead>
-                    <tr>
-                        <th>
-                            شناسه
-                        </th>
-                        <th>
-                            نام آزمون
-                        </th>
-                        <th>
-                            وضعیت
-                        </th>
-                        <th>
-                            نام کاربر
-                        </th>
-                        <th>
 
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($enrols as  $enrol)
-                        <tr>
-                            <td>{{$enrol->id}}</td>
-                            <td>{{$enrol->exam->title}}</td>
-                            <td>
-                                @if($enrol->accept==0)
-                                    غیرفعال
-                                @else
-                                    تایید شده
-                                @endif
-
-                            </td>
-                            <td>
-                                {{$enrol->user->name}}
-                            </td>
-                            <td >
-                                <div class="row">
-
-                                </div>
-
-
-                            </td>
-                        </tr>
-
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-            {{$enrols->links()}}
+            <livewire:admin.statistics-datatable  :params="$id" />
         </div>
     </div>
 

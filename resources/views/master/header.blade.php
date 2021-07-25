@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="{{asset('asset/css/datepicker.min.css')}}">
 <link rel="stylesheet" href="{{asset('asset/css/jquery.dataTables.min.css')}}">
 <link rel="stylesheet" href="{{asset('asset/style.css')}}">
+<link rel="stylesheet" href="{{mix('/css/app.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.3/sweetalert2.css" integrity="sha512-nJTO5UISeCbemckcK8d+kUtqniNyPLLFoKOCu7IfTnvTBTnp7HVFjjusBNKitx2HmH9pU6uXp1BDHCvogap01w==" crossorigin="anonymous" />
 <script src="{{asset('asset/js/modernizr-3.6.0.min.js')}}"></script>
 <style>

@@ -31,6 +31,10 @@
                     <a href="{{ route('create.exam') }}"
                        class="nav-link"><span>ساخت آزمون</span></a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('index.users') }}"
+                       class="nav-link"><span>کاربران</span></a>
+                </li>
             @endcan
         </ul>
     </div>

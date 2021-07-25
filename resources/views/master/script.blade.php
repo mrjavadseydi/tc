@@ -17,19 +17,19 @@
 <script src="{{asset('asset/js/jquery.dataTables.min.js')}}"></script>
 
 <script src="{{asset('asset/js/main.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.3/sweetalert2.min.js" integrity="sha512-vU//bDmQBZyvfOmsBHrOUc9+iMs32JjycRIyZQMOPQ9kDF9+NhnDAMTVsH/vDoRmqbfB/EO2YYj73MZ3C17yBw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.3/sweetalert2.min.js"
+        integrity="sha512-vU//bDmQBZyvfOmsBHrOUc9+iMs32JjycRIyZQMOPQ9kDF9+NhnDAMTVsH/vDoRmqbfB/EO2YYj73MZ3C17yBw=="
+        crossorigin="anonymous"></script>
 <script>
-@if ($errors->any())
-
+    @if ($errors->any())
     @foreach ($errors->all() as $error)
-        toastr.error('{{ $error }}', '', []);
-        @endforeach
-
-        @endif
+    toastr.error('{{ $error }}', '', []);
+    @endforeach
+    @endif
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        $(".confirmed").on("click", function(e) {
+        $(".confirmed").on("click", function (e) {
             e.preventDefault();
             Swal.fire({
                 title: 'مطمئن هستید؟',
@@ -48,3 +48,4 @@
         })
     })
 </script>
+<script src="{{asset('js/app.js')}}"></script>
