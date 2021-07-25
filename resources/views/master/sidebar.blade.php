@@ -1,4 +1,4 @@
-<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color around">
     <div class="mobile-sidebar-header d-md-none">
         <div class="header-logo">
             {{ Auth::user()->name }}

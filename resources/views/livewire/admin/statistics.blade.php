@@ -21,8 +21,11 @@
                 </div>
             </div>
 
-            <livewire:admin.statistics-datatable  :params="$id" />
+
         </div>
     </div>
+    <div class="slot">
+        <livewire:admin.statistics-datatable  :params="$id" />
 
+    </div>
 </div>
