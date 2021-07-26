@@ -36,6 +36,10 @@
                        class="nav-link"><span>کاربران</span></a>
                 </li>
             @endcan
+            <li class="nav-item">
+                <a href="{{ route('edit.me') }}"
+                   class="nav-link"><span>ویرایش اطلاعات حساب</span></a>
+            </li>
         </ul>
     </div>
 </div>

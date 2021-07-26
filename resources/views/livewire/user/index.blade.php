@@ -54,7 +54,9 @@
                             </td>
                             <td >
                                 <div class="row">
-
+                                    <a href="{{route('edit.user',$user->id)}}" class="btn btn-primary">
+                                        ویرایش کاربر
+                                    </a>
                                 </div>
 
 
