@@ -31,6 +31,9 @@
                             نام آزمون
                         </th>
                         <th>
+                            تعداد داوطلبان
+                        </th>
+                        <th>
                             وضعیت
                         </th>
                         <th>
@@ -44,6 +47,9 @@
                             <td>{{$exam->id}}</td>
                             <td>{{$exam->title}}</td>
                             <td>
+                                {{$exam->enrol_count}}
+                            </td>
+                            <td>
                                 @if($exam->active==0)
                                     غیرفعال
                                 @else
@@ -53,13 +59,14 @@
                             </td>
                             <td >
                                 <div class="row">
-                                    <livewire:exam.delete :key="$exam->id" :examid="$exam->id"></livewire:exam.delete>
                                     <a href="{{route('edit.exam',$exam->id)}}" class="btn btn-primary m-1">
                                         ویرایش
                                     </a>
                                     <a href="{{route('report.exam',$exam->id)}}" class="btn btn-info m-1">
                                         آمار آزمون
                                     </a>
+                                    <livewire:exam.delete :key="$exam->id" :examid="$exam->id"></livewire:exam.delete>
+
                                 </div>
 
 

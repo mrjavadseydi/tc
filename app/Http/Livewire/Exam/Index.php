@@ -14,7 +14,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.exam.index',[
-            'exams'=>Exam::orderBy('id','desc')->paginate(10)
+            'exams'=>Exam::withCount('enrol')->orderBy('id','desc')->paginate(10)
         ])->layout('master.index');
     }
 }
