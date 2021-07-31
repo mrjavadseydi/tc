@@ -8,6 +8,7 @@ Route::prefix('admin')->middleware('can:admin')->group(function (){
     Route::get('exam-create',\App\Http\Livewire\Exam\Create::class)->name('create.exam');
     Route::get('exam-index',\App\Http\Livewire\Exam\Index::class)->name('index.exam');
     Route::get('exam-edit/{id}',\App\Http\Livewire\Exam\Edit::class)->name('edit.exam');
+    Route::get('exam-delete/{examid}',\App\Http\Livewire\Exam\Delete::class)->name('delete.exam');
     Route::get('statistics/{id}',\App\Http\Livewire\Admin\Statistics::class)->name('report.exam');
     Route::get('manage-user',\App\Http\Livewire\User\Index::class)->name('index.users');
     Route::get('manage-user/{id}',\App\Http\Livewire\User\Edit::class)->name('edit.user');

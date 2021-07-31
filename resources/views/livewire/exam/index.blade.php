@@ -65,7 +65,9 @@
                                     <a href="{{route('report.exam',$exam->id)}}" class="btn btn-info m-1">
                                         آمار آزمون
                                     </a>
-                                    <livewire:exam.delete :key="$exam->id" :examid="$exam->id"></livewire:exam.delete>
+                                    <a href="{{route('delete.exam',$exam->id)}}" class="btn btn-danger m-1 confirmed">
+                                        حذف آزمون
+                                    </a>
 
                                 </div>
 
